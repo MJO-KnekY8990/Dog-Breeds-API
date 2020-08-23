@@ -8,7 +8,7 @@ sess = tf.compat.v1.Session(config=config)
 
 import time
 
-from tensorflow.keras.applications import InceptionResNetV2
+from tensorflow.keras.applications import Xception
 from tensorflow.keras.layers import Input
 
 import keras
@@ -34,9 +34,9 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 @st.cache(persist=True)
 def predict(img):
-    model = InceptionResNetV2(weights="imagenet",
-                  include_top=True,
-                  input_tensor=Input(shape=(224, 224, 3)))
+    model = Xception(weights="imagenet",
+                    include_top=True,
+                    input_tensor=Input(shape=(224, 224, 3)))
     img = img_to_array(img)
     img = img.reshape((-1, img.shape[0], img.shape[1], 3)) / 255
     rez = model.predict(img)

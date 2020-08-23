@@ -20,6 +20,8 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 import pandas as pd
 
+st.set_option('deprecation.showfileUploaderEncoding', False)
+
 @st.cache(persist=True)
 def predict(img):
     model = load_model('model')

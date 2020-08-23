@@ -24,7 +24,8 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 @st.cache(persist=True)
 def predict(img):
-    model = load_model('model')
+    #model = load_model('model')
+    model = load_model('s3://mjo-dogs-breeds-mdl')
     labels = np.array(pd.read_csv('idx_to_class.csv')['0'])
     img = load_img('tst.jpg',target_size=(224,224))
     img = img_to_array(img)

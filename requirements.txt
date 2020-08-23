@@ -1,3 +1,4 @@
+pip==20.2.1
 streamlit
 keras==2.3.1
 keras-preprocessing==1.1.0
